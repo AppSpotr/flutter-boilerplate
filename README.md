@@ -11,9 +11,11 @@ A new Flutter project for React Native developers.
 
 ## Useful links
 
+- [Install Flutter SDK](https://docs.flutter.dev/get-started/install)
 - [Core Widget Catalog](https://docs.flutter.dev/development/ui/widgets)
 - [Dart and Flutter Packages](https://pub.dev)
 - [General Dart Documentation](https://dart.dev/guides)
+- [Bottom Nav Bar Example](https://blog.logrocket.com/how-to-build-a-bottom-navigation-bar-in-flutter/)
 
 ## Getting Started
 
