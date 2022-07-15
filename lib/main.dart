@@ -1,6 +1,7 @@
 import 'package:boilerplate/screens/home/widget.dart';
 import 'package:boilerplate/state/counter/state.dart';
 import 'package:boilerplate/state/navigation/state.dart';
+import 'package:boilerplate/state/todos/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: ((context) => CounterState()),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => TodosState(),
         )
       ],
       child: MaterialApp(

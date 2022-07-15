@@ -1,5 +1,6 @@
 import 'package:boilerplate/screens/counter/widget.dart';
 import 'package:boilerplate/screens/counter2/widget.dart';
+import 'package:boilerplate/screens/todos/widget.dart';
 import 'package:boilerplate/state/navigation/actions.dart';
 import 'package:boilerplate/state/navigation/state.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ const List<Widget> pages = <Widget>[
     title: 'Counter Page 1',
   ),
   Counter2Page(),
+  TodosScreen(),
 ];
 
 class MyHomePage extends StatefulWidget {
@@ -48,6 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
             BottomNavigationBarItem(
               icon: Icon(Icons.home_filled),
               label: 'home2',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.list),
+              label: 'todos',
             ),
           ],
         ),
