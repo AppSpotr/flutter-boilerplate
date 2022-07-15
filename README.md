@@ -1,6 +1,19 @@
 # boilerplate
 
-A new Flutter project.
+A new Flutter project for React Native developers.
+
+## React Native to Flutter terms
+
+- package.json = `pubspec.yaml`
+- /src = `/lib`
+- component = `widget`
+- module = `package`
+
+## Useful links
+
+- [Core Widget Catalog](https://docs.flutter.dev/development/ui/widgets)
+- [Dart and Flutter Packages](https://pub.dev)
+- [General Dart Documentation](https://dart.dev/guides)
 
 ## Getting Started
 
