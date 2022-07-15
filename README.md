@@ -16,6 +16,7 @@ A new Flutter project for React Native developers.
 - [Dart and Flutter Packages](https://pub.dev)
 - [General Dart Documentation](https://dart.dev/guides)
 - [Bottom Nav Bar Example](https://blog.logrocket.com/how-to-build-a-bottom-navigation-bar-in-flutter/)
+- [Simple Push Navigation](https://docs.flutter.dev/cookbook/navigation/navigation-basics)
 
 ## Getting Started
 
