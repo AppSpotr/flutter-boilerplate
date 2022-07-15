@@ -65,7 +65,7 @@ class _CounterPage extends State<CounterPage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             const Text(
               'You have pushed the button this many times:',
             ),

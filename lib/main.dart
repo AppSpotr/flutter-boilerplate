@@ -1,4 +1,5 @@
 import 'package:boilerplate/screens/home/widget.dart';
+import 'package:boilerplate/state/counter/state.dart';
 import 'package:boilerplate/state/navigation/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => NavigationState(),
         ),
+        ChangeNotifierProvider(
+          create: ((context) => CounterState()),
+        )
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
