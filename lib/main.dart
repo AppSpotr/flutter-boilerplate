@@ -1,10 +1,12 @@
 import 'package:boilerplate/screens/home/widget.dart';
-import 'package:boilerplate/state/navigation/actions.dart';
 import 'package:boilerplate/state/navigation/state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+Future main() async {
+  await dotenv.load(fileName: '.env');
+
   runApp(const MyApp());
 }
 
