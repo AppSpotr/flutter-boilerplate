@@ -29,4 +29,12 @@ class TodosActions {
   void search(String s) {
     todos.searchTodos(s);
   }
+
+  void addTodo(Todo t) {
+    todos.addTodo(t);
+  }
+
+  void undoAddTodo() {
+    todos.undoAddTodo();
+  }
 }

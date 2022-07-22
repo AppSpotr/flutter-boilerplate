@@ -1,3 +1,4 @@
+import 'package:boilerplate/screens/todos/details.dart';
 import 'package:boilerplate/state/todos/actions.dart';
 import 'package:boilerplate/state/todos/selectors.dart';
 import 'package:boilerplate/state/todos/state.dart';
@@ -27,6 +28,24 @@ class _TodosScreen extends State<TodosScreen> {
     return;
   }
 
+  void onAddTodo(String s) {
+    todoActions.addTodo(Todo(id: 0, title: s));
+
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(s),
+      action: SnackBarAction(label: 'Undo', onPressed: todoActions.undoAddTodo),
+    ));
+  }
+
+  void openTodo(String title) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetailsScreen(title: title),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) => Consumer<TodosState>(
         builder: ((context, todos, child) {
@@ -47,7 +66,7 @@ class _TodosScreen extends State<TodosScreen> {
                     SizedBox(
                       height: 40,
                       child: Center(
-                        child: Text('There are ${todos.todos.length} todos.'),
+                        child: Text('There are ${filteredTodos.length} todos.'),
                       ),
                     ),
                   ],
@@ -65,7 +84,17 @@ class _TodosScreen extends State<TodosScreen> {
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      width: 25,
+                    ),
+                    IconButton(
+                      onPressed: () => onAddTodo(todos.search),
+                      icon: const Icon(Icons.add),
+                    )
                   ],
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 Expanded(
                   child: Center(
@@ -73,10 +102,23 @@ class _TodosScreen extends State<TodosScreen> {
                       onRefresh: fetchItems,
                       child: ListView.builder(
                         itemCount: filteredTodos.length,
-                        itemBuilder: ((context, index) => SizedBox(
-                              height: 40,
-                              child:
-                                  Text('title: ${filteredTodos[index].title}'),
+                        itemBuilder: ((context, index) => Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    'title: ${filteredTodos[index].title}',
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 40,
+                                  child: IconButton(
+                                    onPressed: () =>
+                                        openTodo(filteredTodos[index].title),
+                                    icon: const Icon(Icons.arrow_right),
+                                  ),
+                                ),
+                              ],
                             )),
                       ),
                     ),

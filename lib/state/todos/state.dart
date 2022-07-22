@@ -17,17 +17,30 @@ class TodosState with ChangeNotifier {
 
   String search = '';
 
+  void undoAddTodo() {
+    todos.removeAt(0);
+
+    notifyListeners();
+  }
+
+  void addTodo(Todo t) {
+    todos.insert(0, t);
+    search = '';
+
+    notifyListeners();
+  }
+
   void searchTodos(String s) {
     search = s;
 
-    update();
+    notifyListeners();
   }
 
   void request() {
     loading = true;
     error = false;
 
-    update();
+    notifyListeners();
   }
 
   void success(List<Todo> todos) {
@@ -42,10 +55,6 @@ class TodosState with ChangeNotifier {
     loading = false;
     error = true;
 
-    update();
-  }
-
-  void update() {
     notifyListeners();
   }
 }
