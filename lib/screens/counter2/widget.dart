@@ -65,6 +65,7 @@ class _Counter2Page extends State<Counter2Page> {
               floatingActionButton: FloatingActionButton(
                 onPressed: _incrementCounter,
                 tooltip: 'Increment',
+                heroTag: 'counter2',
                 child: const Icon(Icons.add),
               ), // This trailing comma makes auto-formatting nicer for build methods.
             )));
