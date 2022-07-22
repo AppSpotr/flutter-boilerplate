@@ -11,12 +11,17 @@ class Todo {
 }
 
 class TodosState with ChangeNotifier {
-  List<Todo> todos = [
-    const Todo(id: 1, title: 'Test'),
-    const Todo(id: 2, title: 'Hello'),
-  ];
+  List<Todo> todos = [];
   bool loading = false;
   bool error = false;
+
+  String search = '';
+
+  void searchTodos(String s) {
+    search = s;
+
+    update();
+  }
 
   void request() {
     loading = true;

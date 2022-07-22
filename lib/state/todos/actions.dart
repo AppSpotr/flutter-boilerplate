@@ -25,4 +25,8 @@ class TodosActions {
       todos.errorFn();
     }
   }
+
+  void search(String s) {
+    todos.searchTodos(s);
+  }
 }
